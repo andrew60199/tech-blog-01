@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+        <link href="./css/reset.css" type="text/css" rel="stylesheet">
+        <link href="./css/custom.css" type="text/css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Blog</title>
+        <script defer src="/js/index.js"></script>
+        {{#if logged_in}}
+        <script defer src="/js/logout.js"></script>
+        {{else}}
+        {{!-- Make sure to remove the one in the login.handlebar file... --}}
+        <script defer src="/js/login.js"></script>
+        {{/if}}
+    </head>
+    <body>
+        <header>
+            <div class="fixedheadnav">
+                <div class="header">
+                    <h1 class="logo">Tech Blog</h1>
+                </div>
+                <nav class="navigation">
+                    <ul id="navigation">
+                        <li><button id="home-page" class="reset-button">Home Page</button></li>
+                        <li><button id="dashboard" class="reset-button">Your Dashboard</button></li>
+                        <li><button id="login" class="reset-button">Login</button></li>
+                        {{!-- {{#if logged_in}}
+                        <li><button class="reset-button">Logout</button></li>
+                        {{else}}
+                        <li><button class="reset-button">Login</button></li>
+                        {{/if}} --}}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            {{{ body }}}
+            {{!-- Design card then add it to partial... So we can style it and the comment section... --}}
+            <section>
+                <button class="blog">
+                    <div class="blog-header">
+                        <h3>Title</h3>
+                        <h4 class="right">Username</h4>
+                        <p class="time">Timestamp</p> 
+                    </div>
+                    <p class="content">Text</p>
+                </button>
+            </section>
+
+            <section>
+                <div>
+                    <div class="blog-header">
+                        <h3>Title</h3>
+                        <h4 class="right">Username</h4>
+                        <p class="time">Timestamp</p> 
+                    </div>
+                    <p class="content">Text</p>
+
+                    <div class="line"></div>
+                    <h5 class="padding">Comments</h5>
+                    <div class="comment">
+                        <p class="time">Timestamp</p>
+                        <div class="flex">
+                            <h6>Username</h6>
+                            <p>Comment placed here</p>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <p class="time">Timestamp</p>
+                        <div class="flex">
+                            <h6>Username</h6>
+                            <p>Comment placed here</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <p class="time">Timestamp</p>
+                        <div class="flex">
+                            <h6>Username</h6>
+                            <p>Comment placed here</p>
+                        </div>
+                    </div>
+
+                    <form id="comment-form">
+                        <div class="comment-form">
+                            <textarea class="comment-textarea" type="text" id="user-comment" placeholder="Write a comment here" required/></textarea>
+                        </div>
+                        <div class="comment-form flex right">
+                            <button class="comment-button" type="submit">Reply</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <button class="blog">
+                    <div class="blog-header">
+                        <h3>Title</h3>
+                        <p class="time">Timestamp</p> 
+                    </div>
+                    <p class="content">Text</p>
+                </button>
+            </section>
+
+            <button class="form-button" type="submit">Create a blog post</button>
+
+            <section class="n-a">
+                <h3>Nothing here yet!</h3>
+            </section>
+
+        </main>
+        
+        <footer>
+        </footer>
+        <div class="footer-helper"></div>
+    </body>
+</html>
