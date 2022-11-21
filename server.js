@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-// const routes = require('./routes')
+const routes = require('./controllers')
 const sequelize = require('./config/connection')
 const exphbs = require('express-handlebars');
 
@@ -16,15 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.use(routes)
-
-app.get('/', (req, res) => {
-    res.render('home');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
+app.use(routes)
 
 const init = async () => {
   await sequelize.sync({ force: false })

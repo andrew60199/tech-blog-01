@@ -1,3 +1,10 @@
+const communication = document.querySelector('#message')
+const toSignUp = document.querySelector('#sign-up')
+
+toSignUp.addEventListener('click', () => {
+  document.location.replace('/signup')
+})
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -14,7 +21,11 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      // 'Failed to log in' message
+      // https://www.youtube.com/watch?v=5TxF9PQaq4U 
+      // This parses the JSON
+      const data = await response.json()
+      // Then we need to refer back to what key we gave it... 
+      communication.textContent = data.message
     }
   }
 };
