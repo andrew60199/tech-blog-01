@@ -285,6 +285,7 @@ label {
         padding: 0 0.625rem;
     }
 
+    .signup-form,
     .login-form {
         width: 50%;
     }
@@ -325,6 +326,7 @@ label {
         padding: 0 25.5%;
     }
 
+    .signup-form,
     .login-form {
         width: 100%;
     }

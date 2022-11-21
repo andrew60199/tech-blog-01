@@ -5,13 +5,13 @@ const communication2 = document.querySelector('#message')
 const signUpFormHandler = async (event) => {
     event.preventDefault();
   
-    const email = document.querySelector('#email-signup').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
-    if (email && password) {
+    if (username && password) {
       const response = await fetch('/api/users/signup', {
         method: 'PUT',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
