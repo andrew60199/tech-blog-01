@@ -12,7 +12,6 @@
         {{#if logged_in}}
         <script defer src="/js/logout.js"></script>
         {{else}}
-        {{!-- Make sure to remove the one in the login.handlebar file... --}}
         <script defer src="/js/login.js"></script>
         {{/if}}
     </head>
@@ -26,12 +25,11 @@
                     <ul id="navigation">
                         <li><button id="home-page" class="reset-button"><a href="/" class="reset-link">Home Page</a></button></li>
                         <li><button id="dashboard" class="reset-button"><a href="/dashboard" class="reset-link">Your Dashboard</a></button></li>
-                        <li><button id="login" class="reset-button"><a href="/login" class="reset-link">Login</a></button></li>
-                        {{!-- {{#if logged_in}}
-                        <li><button class="reset-button">Logout</button></li>
+                        {{#if logged_in}}
+                        <li><button id="logout" class="reset-button">Logout</button></li>
                         {{else}}
-                        <li><button class="reset-button">Login</button></li>
-                        {{/if}} --}}
+                        <li><button id="login" class="reset-button"><a href="/login" class="reset-link">Login</a></button></li>
+                        {{/if}}
                     </ul>
                 </nav>
             </div>
