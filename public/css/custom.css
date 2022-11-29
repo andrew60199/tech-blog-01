@@ -54,6 +54,10 @@ body {
     text-align: center;
 }
 
+.reset-link {
+    text-decoration: none;
+}
+
 h1 {
     font-family: var(--font);
     font-size: 1.5rem;
@@ -102,9 +106,11 @@ h6 {
     padding-right: 0.5rem;
 }
 
+a,
 p {
     font-family: var(--font);
     font-size: 1rem;
+    color: black
 }
 
 section {
