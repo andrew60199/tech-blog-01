@@ -1,9 +1,4 @@
 const communication = document.querySelector('#message')
-const toSignUp = document.querySelector('#sign-up')
-
-toSignUp.addEventListener('click', () => {
-  document.location.replace('/signup')
-})
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
