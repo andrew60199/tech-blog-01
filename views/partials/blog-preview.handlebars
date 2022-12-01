@@ -1,10 +1,12 @@
 <section>
     <button class="blog">
-        <div class="blog-header">
-            <h3>{{title}}</h3>
-            <h4 class="right">{{user.username}}</h4>
-            <p class="time">{{timestamp}}</p> 
-        </div>
-        <p class="content">{{content}}</p>
+        <a href="/post/{{id}}" class="reset-link">
+           <div class="blog-header">
+                <h3>{{title}}</h3>
+                <h4 class="right">{{user.username}}</h4>
+                <p class="time">{{timestamp}}</p> 
+            </div>
+            <p class="content">{{content}}</p> 
+        </a>
     </button>
 </section>
