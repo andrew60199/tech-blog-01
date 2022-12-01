@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Top 6+ React Development Tools for Productivity",
+        "content": "React is an open-source JavaScript library to build user interfaces based on UI components. Due to its collection of a wide range of libraries and tools, it provides great support for developers to work in a productive environment. \n Nevertheless, creating an application is never easy. Deploying is even harder. Therefore, it's important to find the right tools to aid your development journey and create an enhanced coding experience. \n Here is a recommendation for some of the most popular tools for React developers.",
+        "user_id": 1
+    },
+    {
+        "title": "Building a full-stack TypeScript application with Turborepo",
+        "content": "Whether you're building a full-stack application or an application composed of multiple frontend and backend projects, you'll probably need to share parts across projects to varying extents. \n It could be types, utilities, validation schemas, components, design systems, development tools, or configurations. Monorepos help devs manage all these parts in one repository. \n In this article, we will provide an overview of what monorepos are and what the benefits are of using Turborepo. We'll then build a simple full-stack application using Turborepo with React and Node.js using pnpm workspaces and demonstrate how the process can be improved by using Turborepo.",
+        "user_id": 2
+    }
+]

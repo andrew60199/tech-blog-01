@@ -1,0 +1,22 @@
+[
+    {
+        "content": "Love this post",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "Thank you this has been super helpful",
+        "user_id": 1,
+        "post_id": 2
+    },
+    {
+        "content": "Where did you get the inspiration for this blog post?",
+        "user_id": 3,
+        "post_id": 1
+    },
+    {
+        "content": "Wow I wouldn't have thought this was possible",
+        "user_id": 4,
+        "post_id": 2
+    }       
+]
