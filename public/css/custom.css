@@ -190,6 +190,10 @@ label {
     cursor: pointer;
 }
 
+.margin-1 {
+    margin: 1rem 0;
+}
+
 .blog {
     width: 100%;
     text-align: left;

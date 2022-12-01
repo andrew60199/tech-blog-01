@@ -1,36 +1,18 @@
 <section>
     <div>
         <div class="blog-header">
-            <h3>Title</h3>
-            <h4 class="right">Username</h4>
-            <p class="time">Timestamp</p> 
+            <h3>{{blog.title}}</h3>
+            <h4 class="right">{{blog.username}}</h4>
+            <p class="time">{{blog.timestamp}}</p> 
         </div>
-        <p class="content">Text</p>
+        <p class="content">{{blog.content}}</p>
 
         <div class="line"></div>
         <h5 class="padding">Comments</h5>
-        <div class="comment">
-            <p class="time">Timestamp</p>
-            <div class="flex">
-                <h6>Username</h6>
-                <p>Comment placed here</p>
-            </div>
-        </div>
 
-        <div class="comment">
-            <p class="time">Timestamp</p>
-            <div class="flex">
-                <h6>Username</h6>
-                <p>Comment placed here</p>
-            </div>
-        </div>
-        <div class="comment">
-            <p class="time">Timestamp</p>
-            <div class="flex">
-                <h6>Username</h6>
-                <p>Comment placed here</p>
-            </div>
-        </div>
+        {{#each blog.comments}}
+        {{> comment}}
+        {{/each}}
 
         <form id="comment-form">
             <div class="comment-form">
@@ -42,3 +24,5 @@
         </form>
     </div>
 </section>
+
+<script defer src="/js/blog.js"></script>
