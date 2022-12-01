@@ -48,6 +48,7 @@ body {
     display: inline-block;
     border: none;
     margin: 0;
+    padding: 0;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.0);
     cursor: pointer;
@@ -56,6 +57,10 @@ body {
 
 .reset-link {
     text-decoration: none;
+}
+
+.width-100 {
+    width: 100%;
 }
 
 h1 {
