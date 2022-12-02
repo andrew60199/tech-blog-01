@@ -19,10 +19,11 @@
             <p id="new-time" class="time"></p>
             <div class="flex">
                 <h6>{{username}}</h6>
-                <p id="new-content" class="content"></p>
+                <p id="new-content"></p>
             </div>
         </div>
-
+        
+        {{#if logged_in}}
         <form id="comment-form">
             <p id="message3"></p>
             <div class="comment-form">
@@ -32,8 +33,10 @@
                 <button class="comment-button" type="submit">Reply</button>
             </div>
         </form>
+        {{/if}}
     </div>
 </section>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.0.0-alpha0/date_fns.js" integrity="sha512-EU2b7yz3VY5AnwdmaBFaga05r7fP3L8tzmw1HyVKgPgua+a98xiYb3UQH4pPIK/hj1QdU2xhOQt6Cgg4O4fO7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.0.0-alpha0/date_fns.js" integrity="sha512-EU2b7yz3VY5AnwdmaBFaga05r7fP3L8tzmw1HyVKgPgua+a98xiYb3UQH4pPIK/hj1QdU2xhOQt6Cgg4O4fO7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 <script defer type="module" src="/js/blog.js"></script>

@@ -10,7 +10,6 @@ router.post('/upload', async (req, res) => {
 
         const timestamp = new Date()
 
-        // Can we refactor this so that we don't get Sequelize injection??
         const newComment = await Comment.create({ 
             content: req.body.content, 
             timestamp: timestamp,
