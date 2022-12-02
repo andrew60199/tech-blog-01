@@ -118,11 +118,11 @@ router.get('/post/:id', async (req, res) => {
 
         // To send username we need to save it in the session check userRoutes
         // Otherwise it was coming up as undefined
-        // console.log({ 
-        //     blog,
-        //     logged_in: req.session.logged_in,
-        //     username: req.session.username 
-        // })
+        console.log({ 
+            blog,
+            logged_in: req.session.logged_in,
+            username: req.session.username 
+        })
         
         res.render('blog-post', { 
             blog,

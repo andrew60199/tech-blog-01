@@ -3,7 +3,7 @@
         <div class="blog-header">
             <p class="invisible">{{blog.id}}</p>
             <h3>{{blog.title}}</h3>
-            <h4 class="right">{{blog.username}}</h4>
+            <h4 class="right">{{blog.user.username}}</h4>
             <p class="time">{{blog.timestamp}}</p> 
         </div>
         <p class="content">{{blog.content}}</p>
@@ -27,7 +27,7 @@
         <form id="comment-form">
             <p id="message3"></p>
             <div class="comment-form">
-                <textarea class="comment-textarea" type="text" id="user-comment" placeholder="Write a comment here" required/></textarea>
+                <textarea class="comment-textarea" type="text" id="user-comment" rows="2" placeholder="Write a comment here" required/></textarea>
             </div>
             <div class="comment-form flex right">
                 <button class="comment-button" type="submit">Reply</button>
@@ -39,4 +39,4 @@
 
 {{!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.0.0-alpha0/date_fns.js" integrity="sha512-EU2b7yz3VY5AnwdmaBFaga05r7fP3L8tzmw1HyVKgPgua+a98xiYb3UQH4pPIK/hj1QdU2xhOQt6Cgg4O4fO7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-<script defer type="module" src="/js/blog.js"></script>
+<script defer src="/js/blog.js"></script>
