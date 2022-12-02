@@ -52,10 +52,7 @@ const postComment = async (event) => {
         
     } else {
         message('Something went wrong, please try again.')
-    }
-
-
-    
+    }    
 }
 
 document.querySelector('#comment-form').addEventListener('submit', postComment)
