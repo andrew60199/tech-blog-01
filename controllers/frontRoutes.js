@@ -115,22 +115,24 @@ router.get('/post/:id', async (req, res) => {
         // console.log(blog)
 
         // Since we are sending two keys we need to include the key before accessing the value inside it
+
+        // To send username we need to save it in the session check userRoutes
+        // Otherwise it was coming up as undefined
+        // console.log({ 
+        //     blog,
+        //     logged_in: req.session.logged_in,
+        //     username: req.session.username 
+        // })
+        
         res.render('blog-post', { 
             blog,
-            logged_in: req.session.logged_in 
+            logged_in: req.session.logged_in,
+            username: req.session.username 
         })
-        // res.send({ 
-        //         blog,
-        //         logged_in: req.session.logged_in 
-        // })
 
     } catch (error) {
         res.status(500).json(error)
     }
-
-    // res.render('blog-post', { 
-    //     logged_in: req.session.logged_in 
-    // })
 })
 
 

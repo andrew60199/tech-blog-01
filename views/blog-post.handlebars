@@ -1,6 +1,7 @@
 <section>
     <div>
         <div class="blog-header">
+            <p class="invisible">{{blog.id}}</p>
             <h3>{{blog.title}}</h3>
             <h4 class="right">{{blog.username}}</h4>
             <p class="time">{{blog.timestamp}}</p> 
@@ -14,7 +15,16 @@
         {{> comment}}
         {{/each}}
 
+        <div id="new-comment" class="comment">
+            <p id="new-time" class="time"></p>
+            <div class="flex">
+                <h6>{{username}}</h6>
+                <p id="new-content" class="content"></p>
+            </div>
+        </div>
+
         <form id="comment-form">
+            <p id="message3"></p>
             <div class="comment-form">
                 <textarea class="comment-textarea" type="text" id="user-comment" placeholder="Write a comment here" required/></textarea>
             </div>
@@ -25,4 +35,5 @@
     </div>
 </section>
 
-<script defer src="/js/blog.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.0.0-alpha0/date_fns.js" integrity="sha512-EU2b7yz3VY5AnwdmaBFaga05r7fP3L8tzmw1HyVKgPgua+a98xiYb3UQH4pPIK/hj1QdU2xhOQt6Cgg4O4fO7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer type="module" src="/js/blog.js"></script>
