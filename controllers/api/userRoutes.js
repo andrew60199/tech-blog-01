@@ -24,6 +24,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id
       req.session.logged_in = true
+      req.session.username = userData.username
 
       res.status(200).json({ message: 'You are now logged in!' })
     })
@@ -40,6 +41,7 @@ router.post('/signup', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id
       req.session.logged_in = true
+      req.session.username = userData.username
       
       res.status(200).json({ message: 'You created an account' })
     })

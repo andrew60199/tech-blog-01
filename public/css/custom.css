@@ -258,6 +258,14 @@ label {
     cursor: pointer;
 }
 
+#new-comment {
+    display: none;
+}
+
+.invisible {
+    display: none;
+}
+
 .n-a {
     height: 10rem;
     display: flex;
