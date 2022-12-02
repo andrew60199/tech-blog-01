@@ -3,7 +3,7 @@
         <div class="blog-header">
             <p class="invisible">{{blog.id}}</p>
             <h3>{{blog.title}}</h3>
-            <h4 class="right">{{blog.username}}</h4>
+            <h4 class="right">{{blog.user.username}}</h4>
             <p class="time">{{blog.timestamp}}</p> 
         </div>
         <p class="content">{{blog.content}}</p>
@@ -27,7 +27,7 @@
         <form id="comment-form">
             <p id="message3"></p>
             <div class="comment-form">
-                <textarea class="comment-textarea" type="text" id="user-comment" placeholder="Write a comment here" required/></textarea>
+                <textarea class="comment-textarea" type="text" id="user-comment" rows="2" placeholder="Write a comment here" required/></textarea>
             </div>
             <div class="comment-form flex right">
                 <button class="comment-button" type="submit">Reply</button>
