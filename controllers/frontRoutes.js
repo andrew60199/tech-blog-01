@@ -54,10 +54,46 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 })
 
-router.get('/dashboard', withAuth, (req, res) => {
-    res.render('dashboard', { 
-        logged_in: req.session.logged_in 
-    })
+router.get('/dashboard', withAuth, async (req, res) => {
+    // Error 'Cannot set headers after they are sent to the client'
+    // Check body of what you are sending - quizme project
+    // Make sure your not sending two files to the client!!
+
+    try {
+        const dbBlogData = await Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+            order: [
+                ['timestamp', 'DESC'],
+            ],         
+        })
+
+        const blogs = dbBlogData.map((blog) => blog.get({ plain: true }))
+
+        blogs.forEach(blog => {
+            blog.timestamp = format(blog.timestamp, 'dd LLL yyyy')
+        })
+
+        res.render('dashboard', { 
+            blogs,
+            logged_in: req.session.logged_in 
+        })
+        
+        // res.send({ 
+        //     blogs,
+        //     logged_in: req.session.logged_in 
+        // })
+
+    } catch (error) {
+        res.status(500).json(error)
+    }
 })
 
 router.get('/create', withAuth, (req, res) => {
@@ -121,11 +157,11 @@ router.get('/post/:id', async (req, res) => {
 
         // To send username we need to save it in the session check userRoutes
         // Otherwise it was coming up as undefined
-        console.log({ 
-            blog,
-            logged_in: req.session.logged_in,
-            username: req.session.username 
-        })
+        // console.log({ 
+        //     blog,
+        //     logged_in: req.session.logged_in,
+        //     username: req.session.username 
+        // })
         
         res.render('blog-post', { 
             blog,
