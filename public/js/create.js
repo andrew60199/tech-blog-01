@@ -33,4 +33,7 @@ const postBlog = async (event) => {
     } 
 }
 
-blogForm.addEventListener('submit', postBlog)
+if (blogForm) {
+    blogForm.addEventListener('submit', postBlog)
+}
+
