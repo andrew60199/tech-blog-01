@@ -10,6 +10,8 @@
 
 // console.log(day + ' ' + month + ' ' + year)
 
+const commentForm = document.querySelector('#comment-form')
+
 const message = text => {
     const message3 = document.querySelector('#message3')
     message3.textContent = text 
@@ -24,11 +26,11 @@ const postComment = async (event) => {
     const response = await fetch('/api/comments/upload', {
         method: 'POST',
         body: JSON.stringify({
-        content: comment.value.trim(),
-        post_id: postId
+            content: comment.value.trim(),
+            post_id: postId
         }),
         headers: {
-        'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         }
     })
 
@@ -41,12 +43,25 @@ const postComment = async (event) => {
 
         setTimeout(() => {
             newComment.style.display = 'block'
-
             newTime.textContent = today.format("DD MMM YYYY")
             newContent.textContent = comment.value.trim()
 
             // Set the textarea to ''
-            comment.value = ''
+            commentForm.style.display = 'none'
+            // Prevent a user submitting a new comment and overwriting their previous 
+            // By disabling the form and replacing the input with a message
+            // 'To view the latest comments and or comment again please refresh the page'
+
+            const commentBody = document.querySelector('#comment-body')
+
+            const refreshMessageLine = document.createElement('div')
+            refreshMessageLine.className = 'line'
+            commentBody.appendChild(refreshMessageLine)
+
+            const refreshMessage = document.createElement('p')
+            refreshMessage.className = 'padding'
+            refreshMessage.textContent = 'To view the latest comments and or comment again please refresh the page.'
+            commentBody.appendChild(refreshMessage)
 
         }, 200)
         
@@ -55,4 +70,6 @@ const postComment = async (event) => {
     }    
 }
 
-document.querySelector('#comment-form').addEventListener('submit', postComment)
+if (commentForm) {
+    commentForm.addEventListener('submit', postComment)
+}

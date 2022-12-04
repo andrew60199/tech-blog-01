@@ -176,8 +176,8 @@ label {
     border-radius: .5rem;
 }
 
-.form-button {
-    background-color: var(--primary);
+.form-button,
+.form-button-alt {
     border: none;
     padding: 1rem 0;
     width: 100%;
@@ -188,6 +188,15 @@ label {
     font-weight: 700;
     border-radius: .5rem;
     cursor: pointer;
+}
+
+.form-button {
+    background-color: var(--primary);
+}
+
+.form-button-alt {
+    background-color: var(--offblack);
+    color: white;
 }
 
 .margin-1 {

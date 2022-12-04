@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const { Post } = require('../../models')
+const withAuth = require('../../utils/auth')
 
 // api/posts
 
-router.post('/upload', async (req, res) => {
+router.post('/upload', withAuth, async (req, res) => {
     try {
         const timestamp = new Date()
 
