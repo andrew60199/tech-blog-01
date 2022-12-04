@@ -29,7 +29,7 @@ const postBlog = async (event) => {
 
     if (response.ok) {
         overallElement.style.display = 'none'
-        message('Your blog was uploaded successfully!')      
+        message('Upload successful! Navigate back to your dashboard to view the new post.')      
     } 
 }
 
