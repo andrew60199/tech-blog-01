@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
                     attributes: ['username'],
                 },
             ],
+            order: [
+                ['timestamp', 'DESC'],
+            ]
         });
 
         const blogs = dbBlogData.map((blog) => blog.get({ plain: true }))
@@ -22,7 +25,7 @@ router.get('/', async (req, res) => {
             blog.timestamp = format(blog.timestamp, 'dd LLL yyyy')
         })
 
-        // Maybe you can't set local storage from the backend
+        // You can't set local storage from the backend
         // const blogsToString = JSON.stringify(blogs)
         // const getTime = new Date
         // localStorage.setItem("time", getTime)
