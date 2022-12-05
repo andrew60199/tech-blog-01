@@ -64,12 +64,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
+            // Dont need since they are all owned by the user
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ['username'],
+            //     },
+            // ],
             order: [
                 ['timestamp', 'DESC'],
             ],         
@@ -174,5 +175,29 @@ router.get('/post/:id', async (req, res) => {
     }
 })
 
+router.get('/post/:id/edit', withAuth, async (req, res) => {
+
+    try {  
+
+        // Need to check that they own the post! If not send them a forbidden message
+        const dbBlogData = await Post.findByPk(req.params.id)
+
+        const blog = dbBlogData.get({ plain: true })
+
+        if (blog.user_id === req.session.user_id) {
+            res.render('edit', {
+                blog,
+                logged_in: req.session.logged_in 
+            })
+            
+        } else {
+            res.status(403).json('Forbidden')
+        }        
+
+    } catch (error) {
+        res.status(500).json(error)
+    }
+    
+})
 
 module.exports = router

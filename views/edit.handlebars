@@ -1,0 +1,23 @@
+<div id="overall">
+    <h2>Edit your blog post</h2>
+
+    <section>
+        <form id="blog-form">
+            <div class="blog-header">
+                <label for="user-title"><h3>Update the blog posts title here:</h3></label>
+                <textarea class="comment-textarea" type="text" id="user-title" rows="1" placeholder="Title" required/>{{blog.title}}</textarea>
+            </div>
+            <div class="comment-form">
+                <label for="user-article"><h3>Revise your article here:</h3></label>
+                <textarea class="comment-textarea" type="text" id="user-article" rows="10" placeholder="Write our analysis, opinions and more" required/>{{blog.content}}</textarea>
+            </div>
+            <div class="comment-form flex right">
+                <button class="comment-button" type="submit">Confirm changes</button>
+            </div>
+        </form>
+        
+    </section>
+</div>
+<h3 id="message4"></h3>
+
+<script defer src="/js/edit.js"></script>

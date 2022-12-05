@@ -285,6 +285,13 @@ label {
     border-radius: 2px;
 }
 
+.post-controls {
+    padding: 1rem 2rem;
+    margin: 1rem .5rem 0 0;
+    background-color: white;
+    border-radius: .5rem;
+}
+
 /* Tablet and laptop displays*/
 @media screen and (min-width: 769px) and (max-width: 1600px) {
     
