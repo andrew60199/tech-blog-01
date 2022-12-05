@@ -5,6 +5,12 @@
             <h3>{{blog.title}}</h3>
             <h4 class="right">{{blog.user.username}}</h4>
             <p class="time">{{blog.timestamp}}</p> 
+            {{#compare username "===" blog.user.username}}
+            <div class="flex">
+                <button id="edit-post" class="reset-button post-controls">Edit</button>
+                <button id="delete-post" class="reset-button post-controls">Delete</button>
+            </div>                
+            {{/compare}}
         </div>
         <p class="content">{{blog.content}}</p>
 

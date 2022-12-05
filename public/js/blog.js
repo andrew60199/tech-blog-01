@@ -11,6 +11,10 @@
 // console.log(day + ' ' + month + ' ' + year)
 
 const commentForm = document.querySelector('#comment-form')
+const editPost = document.querySelector('#edit-post')
+const deletePost = document.querySelector('#delete-post')
+const postIdFromURL = window.location.pathname
+const destructuring = postIdFromURL.split('/')
 
 const message = text => {
     const message3 = document.querySelector('#message3')
@@ -21,6 +25,7 @@ const postComment = async (event) => {
     event.preventDefault()
 
     const comment = document.querySelector('#user-comment')
+    // You should probably grab it from the URL instead
     const postId = document.querySelector('.invisible').textContent
 
     const response = await fetch('/api/comments/upload', {
@@ -68,6 +73,33 @@ const postComment = async (event) => {
     } else {
         message('Something went wrong, please try again.')
     }    
+}
+
+// Edit post
+if (editPost) {
+    editPost.addEventListener('click', () => {
+        document.location.replace(`/post/${destructuring[2]}/edit`)
+    })
+}
+
+// Delete post
+if (deletePost) {
+    deletePost.addEventListener('click', async () => {
+        // API call
+        const response = await fetch('/api/posts/delete', {
+            method: 'DELETE',
+            body: JSON.stringify({
+                id: destructuring[2],
+            }),
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        }) 
+
+        if (response.ok) {
+            document.location.replace('/')     
+        } 
+    })
 }
 
 if (commentForm) {
