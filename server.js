@@ -12,14 +12,15 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 const sess = {
-  secret: [
-    process.env.SESS_SECRET_01, 
-    process.env.SESS_SECRET_02, 
-    process.env.SESS_SECRET_03, 
-    process.env.SESS_SECRET_04, 
-    process.env.SESS_SECRET_05, 
-    process.env.SESS_SECRET_06
-  ],
+  secret: process.env.SESS_SECRET_01,
+  // [
+  //   process.env.SESS_SECRET_01, 
+  //   process.env.SESS_SECRET_02, 
+  //   process.env.SESS_SECRET_03, 
+  //   process.env.SESS_SECRET_04, 
+  //   process.env.SESS_SECRET_05, 
+  //   process.env.SESS_SECRET_06
+  // ],
   cookie: {
     maxAge: 12 * 60 * 60 * 1000,
     httpOnly: true,
@@ -51,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(routes)
 
 const init = async () => {
-  await sequelize.sync({ force: false })
+  await sequelize.sync({ alter: true })
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`)
   });
