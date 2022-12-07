@@ -11,16 +11,16 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const app = express()
 const PORT = process.env.PORT || 3001
 
+// Add secrets to heroku
 const sess = {
-  secret: process.env.SESS_SECRET_01,
-  // [
-  //   process.env.SESS_SECRET_01, 
-  //   process.env.SESS_SECRET_02, 
-  //   process.env.SESS_SECRET_03, 
-  //   process.env.SESS_SECRET_04, 
-  //   process.env.SESS_SECRET_05, 
-  //   process.env.SESS_SECRET_06
-  // ],
+  secret: [
+    process.env.SESS_SECRET_01, 
+    process.env.SESS_SECRET_02, 
+    process.env.SESS_SECRET_03, 
+    process.env.SESS_SECRET_04, 
+    process.env.SESS_SECRET_05, 
+    process.env.SESS_SECRET_06
+  ],
   cookie: {
     maxAge: 12 * 60 * 60 * 1000,
     httpOnly: true,

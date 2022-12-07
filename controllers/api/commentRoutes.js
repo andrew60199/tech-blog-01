@@ -1,11 +1,13 @@
 const router = require('express').Router()
 const { Comment } = require('../../models')
 // Technically you won't need this as the comment form wont be added to the client if not logged in. But it is handy to have
-// const withAuth = require('../../utils/auth')
+// I found a way to break it. If you delete you cookie the request will go through an no username will be set
+// Therefore it is important to have this 
+const withAuth = require('../../utils/auth')
 
 // api/comments
 
-router.post('/upload', async (req, res) => {
+router.post('/upload', withAuth, async (req, res) => {
     try {
         // post_id: req.params doesnt work since we dont have :id in the route
         // console.log(req.params)

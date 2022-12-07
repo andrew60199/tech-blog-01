@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const { Post } = require('../../models')
+const withAuth = require('../../utils/auth')
 
 // api/posts
 
-router.post('/upload', async (req, res) => {
+router.post('/upload', withAuth, async (req, res) => {
     try {
         const timestamp = new Date()
 
@@ -51,7 +52,7 @@ router.post('/edit', async (req, res) => {
     }
 })
 
-router.delete('/delete', async (req, res) => {
+router.delete('/delete', withAuth, async (req, res) => {
     try {
 
         // There has to be more checks I need to include
