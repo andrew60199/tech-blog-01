@@ -9,7 +9,7 @@ const Sequelize = require('sequelize');
 //       dialect: 'mysql',
 //     });
 
-const PORT = process.env.PORT || 3306
+const PORT = process.env.PORT2 || 3306
 
 // const sequelize = `0.0.0.0:${PORT}`
 //   ? new Sequelize(`0.0.0.0:${PORT}`)
